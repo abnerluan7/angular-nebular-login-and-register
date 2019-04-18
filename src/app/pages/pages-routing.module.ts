@@ -19,6 +19,9 @@ const routes: Routes = [{
     path: 'ui-features',
     loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
   }, {
+    path: 'ponto',
+    loadChildren: './ponto/tables.module#TablesModule',
+  }, {
     path: 'modal-overlays',
     loadChildren: './modal-overlays/modal-overlays.module#ModalOverlaysModule',
   }, {

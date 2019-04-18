@@ -13,6 +13,8 @@ export const authEnvironment = {
   register: '/api/register',
   logout: '/api/logout',
   requestPass: '/api/recover',
-  resetPass: ''
-
+  resetPass: '',
+  user: '/api/users',
+  registers: '/api/modulo/index',
+  regist: '/api/modulo/store'
 };

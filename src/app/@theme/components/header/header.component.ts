@@ -5,6 +5,9 @@ import { UserData } from '../../../@core/data/users';
 import { AnalyticsService } from '../../../@core/utils';
 import { LayoutService } from '../../../@core/utils';
 
+
+import { UserServiceProvider } from '../../../../providers/user-service/user-service'
+
 @Component({
   selector: 'ngx-header',
   styleUrls: ['./header.component.scss'],
@@ -22,18 +25,21 @@ export class HeaderComponent implements OnInit {
               private menuService: NbMenuService,
               private userService: UserData,
               private analyticsService: AnalyticsService,
-              private layoutService: LayoutService) {
+              private layoutService: LayoutService,
+              private userServiceProvider2: UserServiceProvider) {
   }
 
   ngOnInit() {
-    this.userService.getUsers()
-      .subscribe((users: any) => this.user = users.nick);
+    this.userServiceProvider2.userJWT().then((response) => {
+      this.userService.getUsers()
+      .subscribe((users: any) => this.user = response);
+      }
+    );
   }
 
   toggleSidebar(): boolean {
     this.sidebarService.toggle(true, 'menu-sidebar');
     this.layoutService.changeLayoutSize();
-
     return false;
   }
 

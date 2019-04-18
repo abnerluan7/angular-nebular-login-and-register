@@ -51,6 +51,7 @@
     "@nebular/security": "3.4.2",
     "@nebular/theme": "3.4.2",
     "@ng-bootstrap/ng-bootstrap": "^4.0.0",
+    "@ngx-pwa/local-storage": "^7.4.2",
     "@swimlane/ngx-charts": "^10.0.0",
     "angular-tree-component": "7.2.0",
     "angular2-chartjs": "0.4.1",
