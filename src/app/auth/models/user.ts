@@ -6,6 +6,10 @@ export class NbUser {
               public rememberMe?: boolean,
               public terms?: boolean,
               public confirmPassword?: string,
-              public fullName?: string) {
+              public fullName?: string,
+              public pis?: string,
+              public cpf?: string,
+              public cargo?: string,
+              public equipe?: string) {
   }
 }

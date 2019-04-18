@@ -19,7 +19,7 @@
   <div class="form-control-group">
     <label class="label" for="input-name">Full name:</label>
     <input nbInput
-           [(ngModel)]="user.fullName"
+           [(ngModel)]="user.name"
            #fullName="ngModel"
            id="input-name"
            name="fullName"
@@ -63,6 +63,118 @@
       </p>
       <p class="error-message" *ngIf="email.errors?.pattern">
         Email should be the real one!
+      </p>
+    </ng-container>
+  </div>
+
+  <div class="form-control-group">
+    <label class="label" for="input-name">CPF</label>
+    <input nbInput
+           [(ngModel)]="user.cpf"
+           #cpf="ngModel"
+           id="input-cpf"
+           name="cpf"
+           placeholder="CPF"
+           autofocus
+           fullWidth
+           [status]="email.dirty ? (email.invalid  ? 'danger' : 'success') : ''"
+           [required]="getConfigValue('forms.validation.cpf.required')"
+           [minlength]="getConfigValue('forms.validation.cpf.minLength')"
+           [maxlength]="getConfigValue('forms.validation.cpf.maxLength')"
+           [attr.aria-invalid]="cpf.invalid && cpf.touched ? true : null">
+    <ng-container *ngIf="cpf.invalid && cpf.touched">
+      <p class="error-message" *ngIf="cpf.errors?.required">
+        CPF is required!
+      </p>
+      <p class="error-message" *ngIf="cpf.errors?.minlength || cpf.errors?.maxlength">
+        CPF should contains
+        from {{getConfigValue('forms.validation.cpf.minLength')}}
+        to {{getConfigValue('forms.validation.cpf.maxLength')}}
+        characters
+      </p>
+    </ng-container>
+  </div>
+
+  <div class="form-control-group">
+    <label class="label" for="input-name">PIS</label>
+    <input nbInput
+           [(ngModel)]="user.pis"
+           #pis="ngModel"
+           id="input-pis"
+           name="pis"
+           placeholder="PIS"
+           autofocus
+           fullWidth
+           [status]="email.dirty ? (email.invalid  ? 'danger' : 'success') : ''"
+           [required]="getConfigValue('forms.validation.pis.required')"
+           [minlength]="getConfigValue('forms.validation.pis.minLength')"
+           [maxlength]="getConfigValue('forms.validation.pis.maxLength')"
+           [attr.aria-invalid]="pis.invalid && pis.touched ? true : null">
+    <ng-container *ngIf="pis.invalid && pis.touched">
+      <p class="error-message" *ngIf="pis.errors?.required">
+        PIS is required!
+      </p>
+      <p class="error-message" *ngIf="pis.errors?.minlength || pis.errors?.maxlength">
+        PIS name should contains
+        from {{getConfigValue('forms.validation.pis.minLength')}}
+        to {{getConfigValue('forms.validation.pis.maxLength')}}
+        characters
+      </p>
+    </ng-container>
+  </div>
+
+  <div class="form-control-group">
+    <label class="label" for="input-name">Office</label>
+    <input nbInput
+           [(ngModel)]="user.cargo"
+           #office="ngModel"
+           id="input-office"
+           name="office"
+           placeholder="Office"
+           autofocus
+           fullWidth
+           [status]="email.dirty ? (email.invalid  ? 'danger' : 'success') : ''"
+           [required]="getConfigValue('forms.validation.office.required')"
+           [minlength]="getConfigValue('forms.validation.office.minLength')"
+           [maxlength]="getConfigValue('forms.validation.office.maxLength')"
+           [attr.aria-invalid]="office.invalid && office.touched ? true : null">
+    <ng-container *ngIf="office.invalid && office.touched">
+      <p class="error-message" *ngIf="office.errors?.required">
+        Office name is required!
+      </p>
+      <p class="error-message" *ngIf="office.errors?.minlength || office.errors?.maxlength">
+        Office name should contains
+        from {{getConfigValue('forms.validation.office.minLength')}}
+        to {{getConfigValue('forms.validation.office.maxLength')}}
+        characters
+      </p>
+    </ng-container>
+  </div>
+
+  <div class="form-control-group">
+    <label class="label" for="input-name">Team</label>
+    <input nbInput
+           [(ngModel)]="user.equipe"
+           #team="ngModel"
+           id="input-team"
+           name="team"
+           placeholder="Team"
+           autofocus
+           fullWidth
+           [status]="email.dirty ? (email.invalid  ? 'danger' : 'success') : ''"
+           [required]="getConfigValue('forms.validation.team.required')"
+           [minlength]="getConfigValue('forms.validation.team.minLength')"
+           [maxlength]="getConfigValue('forms.validation.team.maxLength')"
+           [attr.aria-invalid]="team.invalid && team.touched ? true : null">
+    <ng-container *ngIf="team.invalid && team.touched">
+      <p class="error-message" *ngIf="team.errors?.required">
+        Team name is required!
+      </p>
+      <p class="error-message" *ngIf="team.errors?.minlength || team.errors?.maxlength">
+        Team name should contains
+        from {{getConfigValue('forms.validation.team.minLength')}}
+        to {{getConfigValue('forms.validation.team.maxLength')}}
+        characters
       </p>
     </ng-container>
   </div>

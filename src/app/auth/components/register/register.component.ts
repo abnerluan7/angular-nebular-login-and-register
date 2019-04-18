@@ -51,6 +51,7 @@ export class NbRegisterComponent {
         this.messages = result.getMessages();
       } else {
         this.errors = result.getErrors();
+        console.log(this.errors)
       }
 
       const redirect = result.getRedirect();

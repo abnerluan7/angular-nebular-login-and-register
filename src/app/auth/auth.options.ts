@@ -77,7 +77,27 @@ export const defaultAuthOptions: any = {
         required: true,
       },
       fullName: {
-        required: false,
+        required: true,
+        minLength: 4,
+        maxLength: 50,
+      },
+      cpf: {
+        required: true,
+        minLength: 11,
+        maxLength: 11,
+      },
+      pis: {
+        required: true,
+        minLength: 11,
+        maxLength: 11,
+      },
+      office: {
+        required: true,
+        minLength: 4,
+        maxLength: 50,
+      },
+      team: {
+        required: true,
         minLength: 4,
         maxLength: 50,
       },
