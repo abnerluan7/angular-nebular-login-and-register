@@ -21,6 +21,7 @@ export class SmartTableComponent {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
+      confirmCreate: true,
     },
     edit: {
       editButtonContent: '<i class="nb-edit"></i>',
@@ -74,10 +75,10 @@ export class SmartTableComponent {
     }
   }
 
-  onRegister(): void {
+  onCreateConfirm(event) {
     this.userServiceProvider2.pontoRegister().then((response) => {
-      console.log(response['data']);
-    }
-  );
+      this.source.append(response['data']);
+      }
+    );
   }
 }
