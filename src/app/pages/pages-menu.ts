@@ -2,7 +2,7 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
-    title: 'Ponto',
+    title: 'Teste Ponto',
     icon: 'nb-e-commerce',
     link: '/pages/ponto/smart-table',
     home: true,
